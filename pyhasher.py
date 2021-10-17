@@ -1,5 +1,6 @@
 #!/bin/python3.9
 from tkinter import *
+from dotenv import load_dotenv
 import urllib.request
 import json
 import os
@@ -8,7 +9,11 @@ import hashlib
 from tkinter import filedialog
 import time
 
-logo ='''
+
+load_dotenv()
+
+def pyhasher():
+    logo ='''
 ╔═══╗     ╔╗ ╔╗         ╔╗         
 ║╔═╗║     ║║ ║║         ║║         
 ║╚═╝║╔╗ ╔╗║╚═╝║╔══╗ ╔══╗║╚═╗╔══╗╔═╗
@@ -18,14 +23,13 @@ logo ='''
      ╔═╝║                          
      ╚══╝
 '''
-def main():
 
     try:
         Tk().withdraw()
         os.system('cls' if os.name == 'nt' else 'clear') 
         print(logo)
         mode_select = input("Mode Select: \n1: File Hasher.\n2: Virus Total Report.\n\nSelection: ") 
-        api_key = "f3f7b1243956a1d954a684f325d267b8480078e1bc96104aee03cf2bc3bed5fb"
+        api_key = os.getenv("API_KEY")
         if mode_select == '1': 
             os.system('cls' if os.name == 'nt' else 'clear')
             file_path = filedialog.askopenfilename() or input("Enter path of the file location: ")
@@ -88,8 +92,9 @@ def main():
 
     except KeyboardInterrupt:
         os.system('cls' if os.name == 'nt' else 'clear')
-        main()
+        pyhasher()
         print('Program Terminated...Exiting.')
         time.sleep(1)
         os.system('cls' if os.name == 'nt' else 'clear')
-main()
+
+pyhasher()
