@@ -25,7 +25,7 @@ try:
     os.system('cls' if os.name == 'nt' else 'clear') 
     print(logo)
     mode_select = input("Mode Select: \n1: File Hasher.\n2: Virus Total Report.\n\nSelection: ") 
-    api_key = "f3f7b1243956a1d954a684f325d267b8480078e1bc96104aee03cf2bc3bed5fb"
+    api_key = "INSERT VIRUS TOTAL API KEY HERE"
     if mode_select == '1': 
         os.system('cls' if os.name == 'nt' else 'clear')
         file_path = filedialog.askopenfilename() or input("Enter path of the file location: ")
