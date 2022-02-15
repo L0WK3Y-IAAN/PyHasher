@@ -1,2 +1,2 @@
 # PyHasher
-Dont forget to add your own Virus Total API key :)
+Dont forget to add your own Virus Total API key 😊
